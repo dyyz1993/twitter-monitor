@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆 -->
+  <circle cx="64" cy="64" r="60" fill="#1DA1F2" />
+  
+  <!-- 雷达圆环 -->
+  <circle cx="64" cy="64" r="45" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="64" cy="64" r="35" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="64" cy="64" r="25" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- 扫描杆 -->
+  <g transform="translate(64, 64)">
+    <line x1="0" y1="-45" x2="0" y2="0" stroke="#ffffff" stroke-width="12">
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 0 0"
+        to="360 0 0"
+        dur="4s"
+        repeatCount="indefinite" />
+    </line>
+    <!-- 顶部小三角 -->
+    <path d="M-4,-45 L4,-45 L0,-52 Z" fill="#ffffff">
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 0 0"
+        to="360 0 0"
+        dur="4s"
+        repeatCount="indefinite" />
+    </path>
+  </g>
+</svg> 

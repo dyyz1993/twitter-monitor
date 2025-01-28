@@ -1,0 +1,92 @@
+{
+  "https://nitter.poast.org": {
+    "success_count": 69,
+    "fail_count": 0,
+    "last_success": 1737995265.187414,
+    "last_failure": 1737775745.532297,
+    "health_score": 100,
+    "cooldown_until": 0,
+    "last_update": 1737771687.835878
+  },
+  "https://nitter.cz": {
+    "success_count": 0,
+    "fail_count": 4,
+    "last_success": null,
+    "last_failure": 1737771391.790294,
+    "health_score": 20,
+    "cooldown_until": 1737771991.790294,
+    "last_update": 1737771391.790294
+  },
+  "https://xcancel.com": {
+    "success_count": 16,
+    "fail_count": 0,
+    "last_success": 1737775826.984427,
+    "last_failure": 1737775806.378788,
+    "health_score": 55,
+    "cooldown_until": 0,
+    "last_update": 1737771694.8701282
+  },
+  "https://lightbrd.com": {
+    "success_count": 1,
+    "fail_count": 25,
+    "last_success": 1737770444.534533,
+    "last_failure": 1737775787.122124,
+    "health_score": 50,
+    "cooldown_until": 1737775847.122124,
+    "last_update": 1737771703.903452
+  },
+  "https://nitter.privacydev.net": {
+    "success_count": 0,
+    "fail_count": 1,
+    "last_success": null,
+    "last_failure": 1737724857.931173,
+    "health_score": 80,
+    "cooldown_until": 1737724932.931173,
+    "last_update": 1737724857.931173
+  },
+  "https://nitter.poast.org/": {
+    "success_count": 0,
+    "fail_count": 1,
+    "last_success": null,
+    "last_failure": 1737724859.853387,
+    "health_score": 80,
+    "cooldown_until": 1737724934.853387,
+    "last_update": 1737724859.853387
+  },
+  "https://nitter.lucabased.xyz/": {
+    "success_count": 0,
+    "fail_count": 1,
+    "last_success": null,
+    "last_failure": 1737724863.8548858,
+    "health_score": 80,
+    "cooldown_until": 1737724938.8548858,
+    "last_update": 1737724863.8548858
+  },
+  "https://lightbrd.com/": {
+    "success_count": 0,
+    "fail_count": 1,
+    "last_success": null,
+    "last_failure": 1737725627.6828318,
+    "health_score": 80,
+    "cooldown_until": 1737725702.6828318,
+    "last_update": 1737725627.6828318
+  },
+  "https://nitter.lucabased.xyz": {
+    "success_count": 0,
+    "fail_count": 1,
+    "last_success": null,
+    "last_failure": 1737725717.910063,
+    "health_score": 80,
+    "cooldown_until": 1737725792.910063,
+    "last_update": 1737725717.910063
+  },
+  "https://nitter.kavin.rocks": {
+    "success_count": 0,
+    "fail_count": 7,
+    "last_success": null,
+    "last_failure": 1737775250.688971,
+    "health_score": 20,
+    "cooldown_until": 1737778850.688971,
+    "last_update": 1737771417.0599968
+  }
+}

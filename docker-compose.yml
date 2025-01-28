@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  twitter-monitor:
+    build:
+      context: twitter-monitor:latest
+      platforms:
+        - "linux/amd64"
+    container_name: twitter-monitor
+    restart: unless-stopped
+    volumes:
+      - ./archives:/app/archives
+      - ./data/screenshots:/app/data/screenshots
+      - ./logs:/app/logs
+      - ./.env:/app/.env
+    ports:
+      - "3005:3005"  # 图片服务端口
+    environment:
+      - TZ=Asia/Shanghai
+      - LOG_DIR=/app/logs
+      # 只保留必要的代理配置
+      - PROXY_ENABLED=true
+      - HTTP_PROXY=http://192.168.0.29:7890
+      - HTTPS_PROXY=http://192.168.0.29:7890
+      - CHROME_HOST=192.168.0.29
+      - CHROME_PORT=19223
+      - SCREENSHOTS_DIR=/app/data/screenshots
+      - HOST=192.168.0.29
+      - IMAGE_PORT=3005
+      - DOMAIN=${DOMAIN:-}  # 可选的域名配置 

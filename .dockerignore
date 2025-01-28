@@ -1,0 +1,7 @@
+.git
+logs/
+*.log
+__pycache__/
+*.pyc 
+.venv/
+archives/

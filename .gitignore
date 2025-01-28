@@ -1,0 +1,16 @@
+.venv
+.DS_Store
+.pytest_cache
+__pycache__
+/data
+/logs
+/cache
+twitter-monitor_latest_amd64.tar
+archive
+.env
+test_nitter.py
+twitter_monitor.py
+twitter_monitor.conf
+test_push.py
+test_time_parse.py
+test_translation.py

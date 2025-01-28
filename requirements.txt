@@ -1,0 +1,9 @@
+beautifulsoup4==4.12.2
+lxml==4.9.3
+requests==2.31.0
+python-dotenv==1.0.0
+pytz>=2024.1
+urllib3<2.0.0,>=1.25.8
+pyppeteer==1.0.2
+aiohttp>=3.9.1
+flask>=3.0.0 

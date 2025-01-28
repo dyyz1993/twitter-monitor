@@ -3,7 +3,7 @@ version: '3'
 services:
   twitter-monitor:
     build:
-      context: twitter-monitor:latest
+      context: .
       platforms:
         - "linux/amd64"
     container_name: twitter-monitor

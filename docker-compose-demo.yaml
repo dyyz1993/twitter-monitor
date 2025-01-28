@@ -1,0 +1,59 @@
+version: '3'
+
+services:
+  # Chrome 浏览器服务
+  steel-browser:
+    image: browserless/chrome:latest
+    container_name: steel-browser
+    restart: unless-stopped
+    ports:
+      - "19223:3000"  # Chrome DevTools 协议端口
+    environment:
+      - MAX_CONCURRENT_SESSIONS=10
+      - CONNECTION_TIMEOUT=300000
+      - MAX_QUEUE_LENGTH=10
+      - PREBOOT_CHROME=true
+      - KEEP_ALIVE=true
+      - WORKSPACE_DELETE_EXPIRED=true
+      - ENABLE_CORS=true
+      - CHROME_REFRESH_TIME=3600
+      - DEFAULT_BLOCK_ADS=true
+      - FUNCTION_ENABLE_INCOGNITO_MODE=true
+    ulimits:
+      core:
+        soft: 0
+        hard: 0
+
+  # Twitter 监控服务
+  twitter-monitor:
+    build:
+      context: .
+      platforms:
+        - "linux/amd64"
+    container_name: twitter-monitor
+    restart: unless-stopped
+    depends_on:
+      - steel-browser
+    volumes:
+      - ./archives:/app/archives
+      - ./data/screenshots:/app/data/screenshots
+      - ./logs:/app/logs
+      - ./.env:/app/.env
+    ports:
+      - "3005:3005"  # 图片服务端口
+    environment:
+      - TZ=Asia/Shanghai
+      - LOG_DIR=/app/logs
+      # Chrome 配置
+      - CHROME_HOST=steel-browser
+      - CHROME_PORT=3000
+      # 截图配置
+      - SCREENSHOTS_DIR=/app/data/screenshots
+      - HOST=0.0.0.0
+      - IMAGE_PORT=3005
+      # 可选的域名配置
+      - DOMAIN=${DOMAIN:-}
+
+networks:
+  default:
+    name: twitter-monitor-network 

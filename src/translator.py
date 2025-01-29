@@ -68,7 +68,7 @@ class Translator:
                 self.config.deepseek_url,
                 headers=self.headers,
                 json=data,
-                timeout=30,
+                timeout=300,
                 proxies=self.config.proxies
             )
             
@@ -90,7 +90,7 @@ class Translator:
             # 验证返回结果格式
             required_sections = ["中文翻译", "内容概要", "关键标签", "重点提示"]
             for section in required_sections:
-                if f"【{section}】" not in analysis:
+                if f"{section}" not in analysis:
                     logging.error(f"API返回结果缺少必要部分【{section}】，完整返回：{analysis}")
                     return None
             

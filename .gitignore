@@ -6,7 +6,7 @@ __pycache__
 /logs
 /cache
 twitter-monitor_latest_amd64.tar
-archive
+archive/
 .env
 test_nitter.py
 twitter_monitor.py

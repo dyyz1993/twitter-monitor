@@ -98,19 +98,24 @@ class Config:
         os.makedirs(self.screenshots_dir, exist_ok=True)
         
     def _load_users(self):
+        """加载要监控的用户列表"""
         users = {}
         try:
-            with open('.env', 'r', encoding='utf-8') as f:
-                for line in f:
-                    if line.strip().startswith('TWITTER_USERS='):
-                        user_list = line.strip().split('=', 1)[1].strip()
-                        for user in user_list.split(','):
-                            if ':' in user:
-                                name, username = user.split(':')
-                                users[name.strip()] = username.strip()
+            # 直接从环境变量获取
+            user_list = self.env_vars.get('TWITTER_USERS', '')
+            if user_list:
+                for user in user_list.split(','):
+                    if ':' in user:
+                        name, username = user.split(':')
+                        users[name.strip()] = username.strip()
+                        
+            if not users:
+                logging.warning("未配置监控用户列表 (TWITTER_USERS)")
+                
         except Exception as e:
             logging.error(f"读取用户配置出错: {str(e)}")
-        return users 
+            
+        return users
 
     def check_env_variables(self):
         """检查必要的环境变量"""

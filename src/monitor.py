@@ -594,7 +594,13 @@ class TwitterMonitor:
                     if not analysis:
                         # 翻译失败或无需翻译时的处理
                         logging.warning(f"推文无需翻译或翻译失败: {tweet['id']}")
-                        
+                        # 确保 tweet_id 是清理过的
+                        tweet_id = tweet['id'].split('#')[0].split('?')[0]
+                        image_url = f"{self.config.image_base_url}/images/{tweet_id}.png"
+                        screenshot_section = (
+                            f"\n### 📸 截图\n\n"
+                            f"![推文截图]({image_url})\n"
+                        )
                         # 构建媒体部分
                         media_section = ""
                         if tweet_data.get('media'):
@@ -620,6 +626,7 @@ class TwitterMonitor:
                             f"### 📝 原文\n\n"
                             f"{tweet_data.get('text', '无文字内容')}"
                             f"{media_section}"
+                            f"{screenshot_section}"
                         )
                         
                         # 推送消息并标记为已发送
